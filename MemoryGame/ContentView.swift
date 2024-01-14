@@ -44,6 +44,13 @@ struct ContentView: View {
                         .transition(.scale)
                         .opacity(card.isMatched ? 0 : 1)
                         .scaleEffect(card.isMatched ? 0.5 : 1)
+                        .rotation3DEffect(
+                            .degrees(card.isMatched ? 360 : 0),
+                            axis: (x: 0.0, y: 1.0, z: 0.0)
+                        )
+                        .rotation3DEffect(
+                            .degrees(card.isMatched ? -180 : 0),                            axis: (x: 0.0, y: 0.0, z: 1.0)
+                        )
                 }
             }
         }
