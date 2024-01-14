@@ -24,9 +24,9 @@ struct CardView: View {
                 .minimumScaleFactor(0.01)
                 .aspectRatio(contentMode: .fit)
                 .rotationEffect(.degrees(card.isMatched ? 360 : 0))
-                .animation(.spin(duration: 2), value: card.isMatched))
-            .cardify(isFaceUp: card.isFaceUp)
-        .opacity(card.isFaceUp || !card.isMatched ? 1 : 0)
+                .animation(.spin(duration: 2), value: card.isMatched)) //tu sie konczy .overlay
+            .cardify(isFaceUp: card.isFaceUp) // tu bierzesz karte
+        .opacity(card.isFaceUp || !card.isMatched ? 1 : 0) // to na cardify
         
     }
 }
